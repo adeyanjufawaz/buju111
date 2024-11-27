@@ -90,16 +90,21 @@ export default function Slider() {
         />
         <div className="flex justify-center items-center text-black gap-10 mt-10">
           <button
-            className="p-2 flex justify-center items-center bg-gray-50 rounded-full h-14 w-14"
+            className={`${
+              cur < 1 ? "bg-grey-500 opacity-15 scale-50" : ""
+            } p-2 flex justify-center items-center bg-gray-50 rounded-full h-14 w-14`}
             onClick={decrement}
           >
-            {"<"}
+            {cur > 0 ? "<" : ""}
           </button>
+
           <button
-            className="p-2 flex justify-center items-center bg-gray-50 rounded-full h-14 w-14"
+            className={`${
+              cur == 14 ? "bg-grey-500 opacity-15 scale-50" : ""
+            } p-2 flex justify-center items-center bg-gray-50 rounded-full h-14 w-14`}
             onClick={increment}
           >
-            {">"}
+            {cur !== 14 ? ">" : ""}
           </button>
         </div>
       </div>
